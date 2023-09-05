@@ -34,6 +34,7 @@ public class StatsServicesTest {
         StatsService service = new StatsService();
 
         int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+
         int expectedSales = 180;
         int actualSales = service.sumSalesOfAllMounth(sales);
 
@@ -45,6 +46,7 @@ public class StatsServicesTest {
         StatsService service = new StatsService();
 
         int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+
         int expectedSales = 15;
         int actualSales = service.averageSalesOfMounth(sales);
 
@@ -56,6 +58,7 @@ public class StatsServicesTest {
         StatsService service = new StatsService();
 
         int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+
         int expectedSales = 5;
         int actualSales = service.moreThenAverageSalesInMounth(sales);
 
@@ -67,6 +70,7 @@ public class StatsServicesTest {
         StatsService service = new StatsService();
 
         int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+
         int expectedSales = 5;
         int actualSales = service.lessThenAverageSalesInMounth(sales);
 
