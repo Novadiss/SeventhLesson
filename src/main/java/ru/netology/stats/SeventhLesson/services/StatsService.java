@@ -41,14 +41,20 @@ public class StatsService {
     }
 
     public int averageSalesOfMounth(int[] sales) { // усредненная продажа в месяц
-        int averageSales = sumSalesOfAllMounth(sales) / Stream.of(sales).mapToInt(m -> m.length).sum();
+       // int averageSales = sumSalesOfAllMounth(sales) / Stream.of(sales).mapToInt(m -> m.length).sum();
+        int averageSales = 0;
+        for (int m : sales) {
+            if (m != 0){
+                averageSales = averageSales + m;
+            }
+        }
 
-        return averageSales;
+        return averageSales / sales.length;
     }
 
     public int moreThenAverageSalesInMounth(int[] sales) { // количество месяцев с продажами выше среднего
         int minMonth = 0;
-        int averageSales = sumSalesOfAllMounth(sales) / Stream.of(sales).mapToInt(m -> m.length).sum();
+        int averageSales = averageSalesOfMounth(sales);
 
         for (int i = 0; i < sales.length; i++) {
             if (sales[i] > averageSales) {
@@ -61,7 +67,7 @@ public class StatsService {
 
     public int lessThenAverageSalesInMounth(int[] sales) { // количество месяцев с продажами ниже среднего
         int minMonth = 0;
-        int averageSales = sumSalesOfAllMounth(sales) / Stream.of(sales).mapToInt(m -> m.length).sum();
+        int averageSales = averageSalesOfMounth(sales);
 
         for (int i = 0; i < sales.length; i++) {
             if (sales[i] < averageSales) {
