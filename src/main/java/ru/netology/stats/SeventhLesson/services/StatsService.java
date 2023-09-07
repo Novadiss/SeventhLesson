@@ -43,6 +43,7 @@ public class StatsService {
     public int averageSalesOfMounth(int[] sales) { // усредненная продажа в месяц
        // int averageSales = sumSalesOfAllMounth(sales) / Stream.of(sales).mapToInt(m -> m.length).sum();
         int averageSales = 0;
+        
         for (int m : sales) {
             if (m != 0){
                 averageSales = averageSales + m;
